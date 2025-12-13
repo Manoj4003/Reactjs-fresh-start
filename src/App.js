@@ -1,11 +1,27 @@
-import ClassComponent from "./components/ClassComponent";
-import StudentComponent from "./components/StudentComponent";
+
+import StudentDetails from "./components/props_concepts/StudentDetails";
+import StudentDetailsClassComponent from "./components/props_concepts/StudentDetailsClassComponent";
+import UsingDestructring from "./components/props_concepts/UsingDestructring";
 
 function App() {
   return (
     <div className="App">
- <StudentComponent/>
- <ClassComponent/>
+      {/* Functional Componets property */}
+      <StudentDetails id={101} name={"Parthiban"} age={29} />
+      <StudentDetails id={102} name={"Madhu"} age={32} />
+      <StudentDetails id={103} name={"Ganapathi"} age={26} />
+
+      {/* Class components property  */}
+      <StudentDetailsClassComponent id={201} name={"Manoj"} age={24} />
+      <StudentDetailsClassComponent id={202} name={"kumar"} age={25} />
+      <StudentDetailsClassComponent id={203} name={"Malaravan"} age={26} />
+
+      {/* Using Destructuring */}
+      <UsingDestructring id={301} name={"Sastik"} age={12} />
+      <UsingDestructring id={302} name={"viswak"} age={10} />
+      <UsingDestructring id={303} name={"Haran"} age={8} />
+
+   
     </div>
   );
 }
