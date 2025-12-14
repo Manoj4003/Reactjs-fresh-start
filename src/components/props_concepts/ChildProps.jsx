@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 export default function ChildProps(props) {
     const { id, name, age } = props.StudentDetails;
@@ -10,7 +10,7 @@ export default function ChildProps(props) {
                 <li>name : {name}</li>
                 <li>age:{age}</li>
             </ul>
-            const data={props.StudentDetails}
+            {/* const data={props.StudentDetails} */}
         </div>
     )
 }
