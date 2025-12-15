@@ -1,13 +1,21 @@
-import Event from "./components/events/Event";
-import MapDemo from "./components/map_array_filter_concepts/MapDemo";
-import StudentDetails from "./components/props_concepts/StudentDetails";
-import StudentDetailsClassComponent from "./components/props_concepts/StudentDetailsClassComponent";
-import UsingDestructring from "./components/props_concepts/UsingDestructring";
+// import Demo from "./components/conditional_rendering/Demo";
+// import Combined from "./components/events/Combined";
+// import Event from "./components/events/Event";
+// import Form_Concept from "./components/forms/Form_Concept";
+// import MapDemo from "./components/map_array_filter_concepts/MapDemo";
+// import StudentDetails from "./components/props_concepts/StudentDetails";
+// import StudentDetailsClassComponent from "./components/props_concepts/StudentDetailsClassComponent";
+// import UsingDestructring from "./components/props_concepts/UsingDestructring";
+// import Clock from "./components/state/Clock";
+// import CurrentTime from "./components/state/CurrentTime";
+// import StudentCount from "./components/state/StudentCount";
+// import UsingClass from "./components/state/UsingClass";
+
+import LifeCycleMount from "./components/lifeCycle/LifeCycleMount";
 
 function App() {
   return (
     <div className="App">
-
       {/* Functional Componets property
       <StudentDetails id={101} name={"Parthiban"} age={29} />
       <StudentDetails id={102} name={"Madhu"} age={32} />
@@ -23,11 +31,26 @@ function App() {
       <UsingDestructring id={302} name={"viswak"} age={10} />
       <UsingDestructring id={303} name={"Haran"} age={8} /> */}
 
-        {/* Using Map
+      {/* Using Map
       <MapDemo />  */}
-      
-      <Event/>
-    </div>  
+
+      {/* Using Event
+      <Event/> */}
+      {/* <Combined/> */}
+
+      {/* Using State */}
+      {/* <StudentCount />
+      <CurrentTime />
+      <UsingClass />
+      <Clock />
+      <Demo/> */}
+
+      {/* Form Concepts */}
+      {/* <Form_Concept/> */}
+
+      {/* Life Cycle Concepts */}
+      <LifeCycleMount/>
+    </div>
   );
 }
 
