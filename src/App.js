@@ -12,6 +12,7 @@
 // import UsingClass from "./components/state/UsingClass";
 
 import LifeCycleMount from "./components/lifeCycle/LifeCycleMount";
+import LifeCycleUpdate from "./components/lifeCycle/LifeCycleUpdate";
 
 function App() {
   return (
@@ -49,7 +50,10 @@ function App() {
       {/* <Form_Concept/> */}
 
       {/* Life Cycle Concepts */}
-      <LifeCycleMount/>
+      <LifeCycleMount color="white"/>
+      <LifeCycleUpdate/>
+
+      
     </div>
   );
 }
