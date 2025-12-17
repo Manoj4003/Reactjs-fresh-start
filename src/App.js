@@ -13,6 +13,8 @@
 
 import LifeCycleMount from "./components/lifeCycle/LifeCycleMount";
 import LifeCycleUpdate from "./components/lifeCycle/LifeCycleUpdate";
+import UseEffectDemo from "./components/useEffect/UseEffectDemo";
+import UseRefDemo from "./components/useRef/UseRefDemo";
 
 function App() {
   return (
@@ -50,9 +52,12 @@ function App() {
       {/* <Form_Concept/> */}
 
       {/* Life Cycle Concepts */}
-      <LifeCycleMount color="white"/>
+      {/* <LifeCycleMount color="white"/>
       <LifeCycleUpdate/>
-
+      // Use Effect
+        <UseEffectDemo/> */}
+        {/* Use Ref */}
+        <UseRefDemo/>
       
     </div>
   );
