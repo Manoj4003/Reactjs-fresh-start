@@ -11,10 +11,16 @@
 // import StudentCount from "./components/state/StudentCount";
 // import UsingClass from "./components/state/UsingClass";
 
-import LifeCycleMount from "./components/lifeCycle/LifeCycleMount";
-import LifeCycleUpdate from "./components/lifeCycle/LifeCycleUpdate";
-import UseEffectDemo from "./components/useEffect/UseEffectDemo";
-import UseRefDemo from "./components/useRef/UseRefDemo";
+import AxiosDemo from "./components/Axios_Concept/AxiosDemo";
+
+// import AdviceApp from "./components/projects/AdviceApp";
+// import WeatherApp from "./components/projects/WeatherApp";
+
+// import LifeCycleMount from "./components/lifeCycle/LifeCycleMount";
+// import LifeCycleUpdate from "./components/lifeCycle/LifeCycleUpdate";
+// import DynamicProject from "./components/projects/DynamicProject";
+// import UseEffectDemo from "./components/useEffect/UseEffectDemo";
+// import UseRefDemo from "./components/useRef/UseRefDemo";
 
 function App() {
   return (
@@ -57,8 +63,15 @@ function App() {
       // Use Effect
         <UseEffectDemo/> */}
         {/* Use Ref */}
-        <UseRefDemo/>
-      
+        {/* <UseRefDemo/> */}
+
+        {/* Building a Dynamic react projects */}
+        {/* <DynamicProject/> */}
+        {/* <AdviceApp/> */}
+        {/* <WeatherApp/> */}
+
+        {/* Axios Concepts */}
+        <AxiosDemo/>
     </div>
   );
 }

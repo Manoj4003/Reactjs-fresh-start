@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fc427b;
+}
+div{
+    color: #fff;
+    
+}
+div h3{
+    font-size: 20px;
+    font-weight: 500px;
+    text-align: center;
+}
+div button{
+    border: none;
+    background-color: #182c61;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+div p{
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 20px;
+    
+}
+div b{
+    background-color: #fff;
+    border-radius: 50%;
+    color: rgb(124, 21, 21);
+    padding: 5px;
+    
+}
