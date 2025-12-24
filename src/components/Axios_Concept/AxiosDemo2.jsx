@@ -1,0 +1,85 @@
+import React, { useEffect, useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import './AxiosDemo2.css';
+
+export default function AxiosDemo2() {
+
+    const [products, setProducts] = useState([]);
+    const [error, setError] = useState("");
+    const [loading, setLoading] = useState(true); // 🔥 loading state
+
+    useEffect(() => {
+        fetch("https://fakestoreapi.com/products")
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("API response error");
+                }
+                return response.json();
+            })
+            .then((data) => {
+                setProducts(data);
+                setLoading(false); // ✅ data loaded
+            })
+            .catch((err) => {
+                console.error("Fetch Error:", err);
+                setError("Failed to load products. Please try again later.");
+                setLoading(false); // ✅ stop loading on error
+            });
+    }, []);
+
+    return (
+        <>
+            {/* 🟡 Loading Message */}
+            {loading && (
+                <p style={{ textAlign: "center", fontSize: "18px" }}>
+                    Loading products...
+                </p>
+            )}
+
+            {/* 🔴 Error Message */}
+            {!loading && error && (
+                <p style={{ color: "red", textAlign: "center" }}>
+                    {error}
+                </p>
+            )}
+
+            {/* 🟢 Products */}
+            {!loading && products.length !== 0 && (
+                <section className="product-section">
+                    {products.map((product) => (
+                        <Card key={product.id} className="product-card">
+
+                            <Card.Img
+                                variant="top"
+                                src={product.image}
+                                className="product-img"
+                            />
+
+                            <Card.Body>
+                                <Card.Title className="title">
+                                    {product.title}
+                                </Card.Title>
+
+                                <Card.Text className="textsize">
+                                    {product.description}
+                                </Card.Text>
+
+                                <Button variant="primary">
+                                    Add To Cart
+                                </Button>
+                            </Card.Body>
+
+                            <Card.Footer>
+                                <Button variant="success">
+                                    ₹ {product.price}
+                                </Button>
+                            </Card.Footer>
+
+                        </Card>
+                    ))}
+                </section>
+            )}
+        </>
+    );
+}

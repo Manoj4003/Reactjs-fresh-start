@@ -12,6 +12,7 @@
 // import UsingClass from "./components/state/UsingClass";
 
 import AxiosDemo from "./components/Axios_Concept/AxiosDemo";
+import AxiosDemo2 from "./components/Axios_Concept/AxiosDemo2";
 import UseRefDemo from "./components/UseRef_Concepts/UseRefDemo";
 
 // import AdviceApp from "./components/projects/AdviceApp";
@@ -73,9 +74,12 @@ function App() {
 
         {/* Axios Concepts */}
         {/* <AxiosDemo/> */}
+        <AxiosDemo2/>
 
         {/* UseRef Cooncepts */}
-        <UseRefDemo/>
+        {/* <UseRefDemo/>
+        
+        */}
     </div>
   );
 }

@@ -1,0 +1,125 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* =========================
+   Product Grid
+========================= */
+.product-section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 30px;
+    background-color: #f4f6f8;
+}
+
+/* =========================
+   Card
+========================= */
+.product-card{
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   Image
+========================= */
+.product-img{
+    height: 220px;
+    width: 100%;
+    object-fit: contain;
+    padding: 15px;
+    background-color: #f9fafb;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* =========================
+   Card Body
+========================= */
+.product-card .card-body{
+    flex: 1;
+    padding: 16px;
+}
+
+/* =========================
+   Title
+========================= */
+.title{
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   Description
+========================= */
+.textsize{
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* =========================
+   Buttons
+========================= */
+.product-card .btn{
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* =========================
+   Footer
+========================= */
+.product-card .card-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background-color: #fafafa;
+    border-top: 1px solid #eee;
+    font-size: 13px;
+}
+
+/* small price button */
+.product-card .card-footer button{
+    padding: 4px 10px;
+    font-size: 13px;
+    line-height: 1.2;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 992px){
+    .product-section{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px){
+    .product-section{
+        grid-template-columns: 1fr;
+        padding: 16px;
+    }
+}
