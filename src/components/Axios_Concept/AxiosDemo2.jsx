@@ -2,50 +2,52 @@ import React, { useEffect, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './AxiosDemo2.css';
+import useFetch from '../CustomHook/useFetch';
 
 export default function AxiosDemo2() {
 
-    const [products, setProducts] = useState([]);
-    const [error, setError] = useState("");
-    const [loading, setLoading] = useState(true); // 🔥 loading state
+    // const [products, setProducts] = useState([]);
+    // const [error, setError] = useState("");
+    // const [loading, setLoading] = useState(true); // 🔥 loading state
 
-    useEffect(() => {
-        fetch("https://fakestoreapi.com/products")
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error("API response error");
-                }
-                return response.json();
-            })
-            .then((data) => {
-                setProducts(data);
-                setLoading(false); // ✅ data loaded
-            })
-            .catch((err) => {
-                console.error("Fetch Error:", err);
-                setError("Failed to load products. Please try again later.");
-                setLoading(false); // ✅ stop loading on error
-            });
-    }, []);
+    // useEffect(() => {
+    //     fetch("https://fakestoreapi.com/products")
+    //         .then((response) => {
+    //             if (!response.ok) {
+    //                 throw new Error("API response error");
+    //             }
+    //             return response.json();
+    //         })
+    //         .then((data) => {
+    //             setProducts(data);
+    //             setLoading(false); // ✅ data loaded
+    //         })
+    //         .catch((err) => {
+    //             console.error("Fetch Error:", err);
+    //             setError("Failed to load products. Please try again later.");
+    //             setLoading(false); // ✅ stop loading on error
+    //         });
+    // }, []);
+    let {products,error,isLoading}=useFetch("https://fakestoreapi.com/products")
 
     return (
         <>
             {/* 🟡 Loading Message */}
-            {loading && (
+            {isLoading && (
                 <p style={{ textAlign: "center", fontSize: "18px" }}>
                     Loading products...
                 </p>
             )}
 
             {/* 🔴 Error Message */}
-            {!loading && error && (
+            {!isLoading && error && (
                 <p style={{ color: "red", textAlign: "center" }}>
                     {error}
                 </p>
             )}
 
             {/* 🟢 Products */}
-            {!loading && products.length !== 0 && (
+            {!isLoading && products.length !== 0 && (
                 <section className="product-section">
                     {products.map((product) => (
                         <Card key={product.id} className="product-card">

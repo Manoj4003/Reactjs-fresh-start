@@ -11,9 +11,14 @@
 // import StudentCount from "./components/state/StudentCount";
 // import UsingClass from "./components/state/UsingClass";
 
-import AxiosDemo from "./components/Axios_Concept/AxiosDemo";
-import AxiosDemo2 from "./components/Axios_Concept/AxiosDemo2";
-import UseRefDemo from "./components/UseRef_Concepts/UseRefDemo";
+import NewProduct from "./components/Product/NewProduct";
+
+// import Revise from "./components/props_concepts/Revise";
+
+// import AxiosDemo from "./components/Axios_Concept/AxiosDemo";
+// import AxiosDemo2 from "./components/Axios_Concept/AxiosDemo2";
+
+// import UseRefDemo from "./components/UseRef_Concepts/UseRefDemo";
 
 // import AdviceApp from "./components/projects/AdviceApp";
 // import WeatherApp from "./components/projects/WeatherApp";
@@ -36,6 +41,7 @@ function App() {
       {/* <StudentDetailsClassComponent id={201} name={"Manoj"} age={24} />
       <StudentDetailsClassComponent id={202} name={"kumar"} age={25} />
       <StudentDetailsClassComponent id={203} name={"Malaravan"} age={26} /> */}
+       {/* <Revise id={101} name="manoj" age={24}/> */}
 
       {/* Using Destructuring */}
       {/* <UsingDestructring id={301} name={"Sastik"} age={12} />
@@ -74,12 +80,16 @@ function App() {
 
         {/* Axios Concepts */}
         {/* <AxiosDemo/> */}
-        <AxiosDemo2/>
+        {/* <AxiosDemo2/>/ */}
+     
 
         {/* UseRef Cooncepts */}
         {/* <UseRefDemo/>
         
         */}
+
+        {/* Using Material UI */}
+        <NewProduct/>
     </div>
   );
 }
