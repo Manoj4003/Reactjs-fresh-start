@@ -25,32 +25,36 @@ export default function NewProduct() {
     }
   });
 
-  function handleChange(e) {
+  const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Handle nested rating
-    if (name === "rate" || name === "count") {
-      setNewProduct({
-        ...newProduct,
-        rating: {
-          ...newProduct.rating,
-          [name]: value
-        }
-      });
-    } else {
-      setNewProduct({
-        ...newProduct,
-        [name]: value
-      });
-    }
-  }
+    if (name.includes("rating.")) {
+      const fieldName = name.split("rating.")[1];
 
-  console.log(newProduct);
+      setNewProduct((prev) => ({
+        ...prev,
+        rating: {
+          ...prev.rating,
+          [fieldName]: Number(value)
+        }
+      }));
+    } else {
+      setNewProduct((prev) => ({
+        ...prev,
+        [name]: value
+      }));
+    }
+  };
+
+  const handleSubmit = () => {
+    console.log("Submitted Product 👉", newProduct);
+    alert("Product Added! Check console 🚀");
+  };
 
   return (
     <Box className="page-center">
       <Paper elevation={12} className="paper">
-        <Typography variant="h5" className="title">
+        <Typography variant="h5" className="title" gutterBottom>
           Create New Product
         </Typography>
 
@@ -77,7 +81,19 @@ export default function NewProduct() {
             />
           </Grid>
 
-          {/* Rate */}
+          {/* Price */}
+          <Grid item xs={12}>
+            <TextField
+              fullWidth
+              name="price"
+              label="Price"
+              type="number"
+              value={newProduct.price}
+              onChange={handleChange}
+            />
+          </Grid>
+
+          {/* Rating Rate */}
           <Grid item xs={6}>
             <TextField
               fullWidth
@@ -89,7 +105,7 @@ export default function NewProduct() {
             />
           </Grid>
 
-          {/* Count */}
+          {/* Rating Count */}
           <Grid item xs={6}>
             <TextField
               fullWidth
@@ -101,10 +117,38 @@ export default function NewProduct() {
             />
           </Grid>
 
-          {/* Button */}
+          {/* Buttons */}
           <Grid item xs={12} className="btn-wrapper">
-            <Button variant="contained" size="large">
-              ADD
+            <Button
+              variant="contained"
+              color="primary"
+              size="large"
+              fullWidth
+              onClick={handleSubmit}
+            >
+              ADD PRIMARY
+            </Button>
+
+            <Button
+              variant="contained"
+              color="secondary"
+              size="large"
+              fullWidth
+              sx={{ mt: 2 }}
+              
+            >
+              ADD SECONDARY
+            </Button>
+
+            <Button
+              variant="contained"
+              color="error"
+              size="large"
+              fullWidth
+              sx={{ mt: 2 }}
+             
+            >
+              ADD DANGER
             </Button>
           </Grid>
         </Grid>

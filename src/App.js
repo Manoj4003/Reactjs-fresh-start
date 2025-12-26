@@ -11,12 +11,17 @@
 // import StudentCount from "./components/state/StudentCount";
 // import UsingClass from "./components/state/UsingClass";
 
+import {  Route, Routes } from "react-router-dom";
+import UpdateProduct from "./components/Product/UpdateProduct";
 import NewProduct from "./components/Product/NewProduct";
+// import Home from "./components/Product/Home";
+
+// import NewProduct from "./components/Product/NewProduct";
 
 // import Revise from "./components/props_concepts/Revise";
 
 // import AxiosDemo from "./components/Axios_Concept/AxiosDemo";
-// import AxiosDemo2 from "./components/Axios_Concept/AxiosDemo2";
+import AxiosDemo2 from "./components/Axios_Concept/AxiosDemo2";
 
 // import UseRefDemo from "./components/UseRef_Concepts/UseRefDemo";
 
@@ -80,7 +85,7 @@ function App() {
 
         {/* Axios Concepts */}
         {/* <AxiosDemo/> */}
-        {/* <AxiosDemo2/>/ */}
+        {/* <AxiosDemo2/> */}
      
 
         {/* UseRef Cooncepts */}
@@ -89,7 +94,18 @@ function App() {
         */}
 
         {/* Using Material UI */}
-        <NewProduct/>
+        {/* <NewProduct/> */}
+        
+        {/* <Home/> */}
+          <Routes>
+
+           <Route path="/" element={<AxiosDemo2 />} />
+        <Route path="/product" element={<AxiosDemo2 />} />
+        <Route path="/update/:id" element={<UpdateProduct />} />
+        <Route path="/newProduct" element={<NewProduct />} />
+          </Routes>
+          
+        
     </div>
   );
 }

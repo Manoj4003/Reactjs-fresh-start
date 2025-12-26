@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './AxiosDemo2.css';
 import useFetch from '../CustomHook/useFetch';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 export default function AxiosDemo2() {
 
@@ -28,6 +29,7 @@ export default function AxiosDemo2() {
     //             setLoading(false); // ✅ stop loading on error
     //         });
     // }, []);
+   let navigate=useNavigate()
     let {products,error,isLoading}=useFetch("https://fakestoreapi.com/products")
 
     return (
@@ -68,7 +70,15 @@ export default function AxiosDemo2() {
                                 </Card.Text>
 
                                 <Button variant="primary">
-                                    Add To Cart
+                                    ADD
+                                </Button>
+                                <Button variant="primary" color='secondary' onClick={()=>{
+                                   navigate(`/update/${product.id}`)
+                                }}>
+                                    Update
+                                </Button>
+                                <Button variant="primary" color='danger'>
+                                    Delete
                                 </Button>
                             </Card.Body>
 
