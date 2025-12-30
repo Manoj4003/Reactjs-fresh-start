@@ -12,8 +12,8 @@
 // import UsingClass from "./components/state/UsingClass";
 
 import {  Route, Routes } from "react-router-dom";
-import UpdateProduct from "./components/Product/UpdateProduct";
-import NewProduct from "./components/Product/NewProduct";
+// import UpdateProduct from "./components/Product/UpdateProduct";
+// import NewProduct from "./components/Product/NewProduct";
 // import Home from "./components/Product/Home";
 
 // import NewProduct from "./components/Product/NewProduct";
@@ -21,7 +21,8 @@ import NewProduct from "./components/Product/NewProduct";
 // import Revise from "./components/props_concepts/Revise";
 
 // import AxiosDemo from "./components/Axios_Concept/AxiosDemo";
-import AxiosDemo2 from "./components/Axios_Concept/AxiosDemo2";
+// import AxiosDemo2 from "./components/Axios_Concept/AxiosDemo2";
+import NavBar from "./components/NavBar/NavBar";
 
 // import UseRefDemo from "./components/UseRef_Concepts/UseRefDemo";
 
@@ -99,10 +100,11 @@ function App() {
         {/* <Home/> */}
           <Routes>
 
-           <Route path="/" element={<AxiosDemo2 />} />
+           {/* <Route path="/" element={<AxiosDemo2 />} />
         <Route path="/product" element={<AxiosDemo2 />} />
         <Route path="/update/:id" element={<UpdateProduct />} />
-        <Route path="/newProduct" element={<NewProduct />} />
+        <Route path="/newProduct" element={<NewProduct />} /> */}
+        <Route path="/" element={<NavBar/>}/>
           </Routes>
           
         
